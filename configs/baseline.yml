@@ -14,3 +14,10 @@ lr: 3e-5
 weight_decay: 0.01
 
 output_dir: outputs/models/baseline_debug
+
+run_name: baseline_distilbert_goemotions
+runs_dir: outputs/runs
+threshold: 0.2
+save_total_limit: 2
+logging_steps: 50
+tensorboard: false
