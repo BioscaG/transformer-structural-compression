@@ -1,0 +1,26 @@
+[project]
+name = "tsc"
+version = "0.1.0"
+description = "Structural compression and low-rank analysis for Transformer models"
+requires-python = ">=3.10"
+dependencies = [
+  "torch",
+  "transformers",
+  "datasets",
+  "accelerate",
+  "evaluate",
+  "numpy",
+  "scikit-learn",
+  "tqdm",
+  "umap-learn",
+  "pyyaml",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.black]
+line-length = 100
+
+[tool.setuptools.packages.find]
+where = ["src"]
