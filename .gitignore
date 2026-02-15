@@ -17,3 +17,5 @@ runs/
 
 # PyTorch / HF cache (opcional)
 .cache/
+
+.idea/
