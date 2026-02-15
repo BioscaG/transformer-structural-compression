@@ -31,14 +31,19 @@ def main(cfg_path: str):
     # Tokenizer
     tok = AutoTokenizer.from_pretrained(cfg["model_name"], use_fast=True)
 
-    train_tok, num_labels = preprocess_goemotions(train, tok, cfg["max_length"])
-    val_tok, _ = preprocess_goemotions(val, tok, cfg["max_length"])
+    train_tok, num_labels, label_names = preprocess_goemotions(train, tok, cfg["max_length"])
+    val_tok, _, _ = preprocess_goemotions(val, tok, cfg["max_length"])
+
+    id2label = {i: name for i, name in enumerate(label_names)}
+    label2id = {name: i for i, name in enumerate(label_names)}
 
     # Model
     model = AutoModelForSequenceClassification.from_pretrained(
         cfg["model_name"],
         num_labels=num_labels,
         problem_type="multi_label_classification",
+        id2label=id2label,
+        label2id=label2id,
     )
 
     def compute_metrics(eval_pred):

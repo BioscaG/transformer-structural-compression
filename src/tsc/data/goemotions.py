@@ -1,6 +1,8 @@
 import numpy as np
 from datasets import load_dataset, Sequence, Value
 from transformers import PreTrainedTokenizerBase
+import json
+from pathlib import Path
 
 TEXT_COL = "text"
 LABEL_COL = "labels"
@@ -32,4 +34,4 @@ def preprocess_goemotions(ds_split, tokenizer: PreTrainedTokenizerBase, max_leng
     ds_tok = ds_split.map(preprocess, batched=True, remove_columns=ds_split.column_names)
     # Ensure float labels for BCEWithLogitsLoss.
     ds_tok = ds_tok.cast_column(LABEL_COL, Sequence(Value("float32")))
-    return ds_tok, num_labels
+    return ds_tok, num_labels, label_names
