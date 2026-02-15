@@ -19,3 +19,8 @@ runs/
 .cache/
 
 .idea/
+
+# packaging artifacts
+*.egg-info/
+dist/
+build/
