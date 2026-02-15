@@ -1,0 +1,16 @@
+torch
+transformers
+datasets
+accelerate
+evaluate
+numpy
+scikit-learn
+tqdm
+pyyaml
+
+[dev]
+black
+ruff
+pytest
+ipykernel
+matplotlib

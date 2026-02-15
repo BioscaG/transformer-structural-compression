@@ -12,9 +12,11 @@ dependencies = [
   "numpy",
   "scikit-learn",
   "tqdm",
-  "umap-learn",
   "pyyaml",
 ]
+
+[project.optional-dependencies]
+dev = ["black", "ruff", "pytest", "ipykernel", "matplotlib"]
 
 [tool.ruff]
 line-length = 100
