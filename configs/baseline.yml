@@ -4,16 +4,16 @@ model_name: distilbert-base-uncased
 dataset_config: simplified
 
 max_length: 128
-train_subset: 5000
-val_subset: 2000
-epochs: 1
+train_subset: 10000
+val_subset: 4000
+epochs: 10
 
-train_batch_size: 8
-eval_batch_size: 16
+train_batch_size: 64
+eval_batch_size: 64
 lr: 3e-5
 weight_decay: 0.01
 
-output_dir: outputs/models/baseline_debug
+output_dir: outputs/models/baseline
 
 run_name: baseline_distilbert_goemotions
 runs_dir: outputs/runs
